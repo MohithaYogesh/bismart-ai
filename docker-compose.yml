@@ -1,0 +1,16 @@
+services:
+  mysql:
+    image: mysql:8.4
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: bismart
+      MYSQL_USER: bismart
+      MYSQL_PASSWORD: bismart
+      MYSQL_ROOT_PASSWORD: local-root-password
+    ports:
+      - "3306:3306"
+    volumes:
+      - bismart_mysql:/var/lib/mysql
+
+volumes:
+  bismart_mysql:
